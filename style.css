@@ -1,0 +1,336 @@
+/* =========================================
+   1. RESET & BASE STYLE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Sangat penting agar layout tidak pecah */
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    color: #5a5a5a;
+    background-color: #f4f4f4;
+}
+
+#container {
+    width: 980px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 1em #cccccc;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
+header {
+    padding: 20px;
+}
+
+header h1 {
+    margin: 10px;
+    color: #b5b5b5;
+}
+
+nav {
+    display: block;
+    background-color: #1f5faa;
+}
+
+nav a {
+    padding: 15px 30px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover, nav a.active {
+    background-color: #054a91;
+    font-weight: bold;
+}
+
+/* =========================================
+   3. LAYOUT STRUCTURE (MAIN & SIDEBAR)
+   ========================================= */
+section#wrapper {
+    padding: 20px;
+    overflow: hidden; /* Membersihkan float secara otomatis */
+}
+
+section#main {
+    float: left;
+    width: 65%; /* Sekitar 637px */
+    padding-right: 20px;
+}
+
+aside {
+    float: right;
+    width: 30%; /* Sekitar 294px */
+}
+
+/* =========================================
+   4. ARTICLE & CONTENT
+   ========================================= */
+article {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden; /* Memastikan bar mengikuti tinggi isi (gambar/tombol) */
+    clear: both;
+}
+
+article h2 {
+    margin-bottom: 10px;
+}
+
+article h2 a {
+    color: #1f5faa;
+    text-decoration: none;
+}
+
+/* Pengaturan Gambar agar Rapi */
+article img {
+    width: 180px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background: #fff;
+}
+
+/* =========================================
+   5. BUTTONS (UBAH & HAPUS)
+   ========================================= */
+.action-buttons {
+    margin-top: 15px;
+    clear: both; /* Memastikan tombol turun setelah teks/gambar */
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-edit {
+    background-color: #5cb85c; /* Hijau */
+    margin-right: 5px;
+}
+
+.btn-delete {
+    background-color: #d9534f; /* Merah */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* =========================================
+   6. WIDGET & FOOTER
+   ========================================= */
+.widget-box {
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.widget-box .title {
+    padding: 10px 16px;
+    background-color: #428bca;
+    color: #fff;
+    font-size: 16px;
+}
+
+.widget-box ul {
+    list-style: none;
+}
+
+.widget-box li a {
+    padding: 10px 16px;
+    color: #333;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+.widget-box li:hover a {
+    background-color: #f9f9f9;
+}
+
+footer {
+    clear: both; /* Menghindari footer naik ke samping float */
+    background-color: #1d1d1d;
+    padding: 20px;
+    color: #eee;
+    text-align: center;
+}
+/* --- Tambahan Perbaikan Layout Artikel --- */
+
+/* 1. Pastikan area artikel punya ruang dan membersihkan float */
+article {
+    clear: both; 
+    overflow: hidden; 
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    display: block;
+    width: 100%;
+}
+
+/* 2. Fix Judul agar tidak tertabrak gambar di atasnya */
+article h2 {
+    clear: both;
+    margin-top: 10px;
+}
+
+/* 3. Fix Gambar agar teks mengalir di samping dengan benar */
+article img {
+    float: left;
+    margin: 0 20px 10px 0;
+    width: 200px; /* Ukuran pas agar tidak terlalu besar */
+    height: auto;
+}
+/* 4. PENTING: Paksa tombol Ubah/Hapus turun ke bawah teks */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+/* 5. Tambaha jika tombol masih naik ke samping gambar */
+article p:last-child {
+    clear: both;
+}
+/* 6. Pastikan sidebar tetap di posisinya */
+section#main {
+    float: left;
+    width: 650px;
+}
+aside {
+    float: right;
+    width: 280px;
+}
+/* --- Tambahan Fix Tabel & Action Buttons --- */
+
+/* 1. Memberi warna pada Bar Artikel agar terlihat (Tabel Style) */
+article {
+    background-color: #ffffff; /* Pastikan background putih */
+    border: 1px solid #dddddd; /* Memberi garis pinggir agar seperti kotak/bar */
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Mengunci agar tombol tidak meluap keluar bar */
+    clear: both;
+    display: block;
+}
+
+/* 2. Fix Tombol agar muncul dengan warna dan tidak hilang */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 15px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #ffffff !important; /* Memaksa tulisan jadi putih */
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Warna Tombol */
+.btn-edit {
+    background-color: #5cb85c !important; /* Warna Hijau */
+}
+
+.btn-delete {
+    background-color: #d9534f !important; /* Warna Merah */
+}
+
+/* 3. Menata ulang posisi gambar dan teks agar tidak tabrakan */
+article img {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #eee;
+}
+
+/* 4. Memastikan Judul dan Isi punya ruang */
+article h2 {
+    margin-bottom: 10px;
+    color: #1f5faa;
+}
+
+article p {
+    line-height: 1.6;
+}
+/* --- Tambahan Khusus Tabel Admin & Tombol --- */
+
+/* 1. Mengatur Tampilan Tabel agar Berwarna */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+.table th {
+    background-color: #f2f2f2; /* Warna baris judul tabel */
+    color: #333;
+    font-weight: bold;
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+/* Warna selang-seling baris tabel */
+.table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* 2. Memperbaiki Tombol Ubah & Hapus */
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #5cb85c; /* Default Hijau (Ubah) */
+    color: #fff !important; /* Paksa teks warna putih */
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Tombol Hapus (DANGER) */
+.btn-danger {
+    background-color: #d9534f !important; /* Paksa warna Merah */
+}
+
+.btn:hover {
+    opacity: 0.8;
+    color: #fff !important;
+}
+
+/* 3. Merapikan isi kolom Judul di Tabel */
+.table b {
+    display: block;
+    margin-bottom: 5px;
+    color: #1f5faa;
+}
+
+.table small {
+    color: #777;
+    line-height: 1.4;
+    display: block;
+}
